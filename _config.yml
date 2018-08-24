@@ -1,10 +1,7 @@
 logo: adr's note. # add logo name
-title: adr's note
+title: adr's note.
 description: > # this means to ignore newlines until "baseurl:"
-  Welcome to adr's blog!
-  Sheng-Hao Ma (aaaddress1, adr) is a core member of CHROOT Security Group and TDOHacker security community in Taiwan. 
-  He has over 10-year experience in reverse engineering, machine language, and Intel 8086. 
-  He experts in Windows vulnerability, Exploit, and Reverse Engineering. 
+  aaaddress1's blog. 
   
 permalink: ':title/'
 baseurl: "" # the subpath of your site, e.g. /blog
@@ -21,7 +18,7 @@ author-name: Sheng-Hao Ma # your name
 about-author: > # about author
   Sheng-Hao Ma (aaaddress1, adr) is a core member of CHROOT Security Group and TDOHacker security community in Taiwan. 
   He has over 10-year experience in reverse engineering, machine language, and Intel 8086. 
-  He experts in Windows vulnerability, and Reverse Engineering. 
+  He experts in Windows vulnerability, Exploit, and Reverse Engineering. 
   
   Moreover, Sheng-Hao Ma was also a speaker at Black Hat, DEFCON USA, VXCON, HITCON (Hackers In Taiwan Conference), 
   SITCON (Students In Taiwan Conference) and iThome#Chatbot.
