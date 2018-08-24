@@ -16,7 +16,7 @@ banner-title: # add banner title
 banner-desc: # add banner description
 
 # Author settings
-author-pic: myface.jpg # your photo
+author-pic: face.jpg # your photo
 author-name: Sheng-Hao Ma # your name
 about-author: > # about author
   Sheng-Hao Ma (aaaddress1, adr) is a core member of CHROOT Security Group and TDOHacker security community in Taiwan. 
