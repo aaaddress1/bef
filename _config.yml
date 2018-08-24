@@ -12,8 +12,8 @@ url: "https://30cm.tw" # the base hostname & protocol for your site, e.g. http:/
 
 # Banner settings
 video: mountains.mp4 # add banner video. Add your video file to the folder video
-banner-title: # add banner title
-banner-desc: # add banner description
+banner-title: aaaddress1's note # add banner title
+banner-desc: It seems like adr leaves some notes here ┐(´∀｀)┌ # add banner description
 
 # Author settings
 author-pic: face.jpg # your photo
