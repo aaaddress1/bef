@@ -39,7 +39,11 @@ dribbble_url:  # add url link
 facebook_url: https://www.facebook.com/aaaddress1 # add url link
 
 # Disqus
-discus_identifier: aaaddress1 # add your discus identifier
+discus_identifier: adr's note # add your discus identifier
+layout: default
+comments: true
+
+
 
 # Newsletter
 mailchimp: # add your MailChimp form identifier. For example - blogenjoyfreedom.us16.list-manage.com/subscribe/post?u=cd56155d76ddeeb4c0bc4d080&amp;id=7a526cd13e
