@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "About Me"
-img: himalayan.jpg # Add image post (optional)
+img: dc.jpg # Add image post (optional)
 date: 2018-08-20 12:55:00 +0300
 description: 
 tag: []
