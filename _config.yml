@@ -41,8 +41,10 @@ facebook_url: https://www.facebook.com/aaaddress1 # add url link
 # Disqus
 discus_identifier: adrs-note # add your discus identifier
 layout: default
-comments: true
-
+comments:
+  provider : disqus
+  disqus :
+    short_name : adrs-note    # 將內容替換成剛剛在disqus上申請的site name
 
 
 # Newsletter
