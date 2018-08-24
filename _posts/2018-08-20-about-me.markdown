@@ -1,15 +1,49 @@
 ---
 layout: post
-title: "My first trip: The wonderful Himalayan"
+title: "About Me"
 img: himalayan.jpg # Add image post (optional)
-date: 2017-07-12 12:55:00 +0300
-description: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. # Add post description (optional)
-tag: [Travel, Blogging, Mountains]
+date: 2018-08-20 12:55:00 +0300
+description: 
+tag: []
 ---
-Flexitarian hella quinoa, stumptown chillwave squid heirloom pop-up church-key. Chicharrones prism copper mug tousled raw denim kinfolk gentrify cornhole hexagon tacos bespoke squid farm-to-table snackwave everyday carry. Vaporware chicharrones activated charcoal jianbing pok pok. Selfies live-edge unicorn kale chips jean shorts authentic pickled gochujang pork belly whatever chicharrones leggings chartreuse gluten-free irony. Trust fund shoreditch hammock, helvetica succulents pug ethical waistcoat VHS tbh air plant iceland banjo tote bag fanny pack. Ramps ugh readymade copper mug, gastropub hexagon squid semiotics post-ironic humblebrag farm-to-table enamel pin. Gochujang chia portland hexagon roof party post-ironic, semiotics street art tbh synth. Air plant vinyl sustainable pork belly. Chicharrones cronut raw denim listicle flexitarian franzen. Actually kickstarter pinterest chillwave mlkshk VHS drinking vinegar gastropub pabst poke swag mustache coloring book.
 
-Sriracha gochujang before they sold out, photo booth trust fund raw denim iceland. Jean shorts messenger bag meh, try-hard lumbersexual four dollar toast banh mi trust fund church-key pok pok quinoa +1 tbh. Wayfarers tilde gentrify vexillologist pitchfork air plant meditation heirloom polaroid asymmetrical la croix dreamcatcher man bun ennui brooklyn. Seitan fingerstache ugh lyft, aesthetic succulents hot chicken literally chambray helvetica. DIY butcher poutine, cred scenester iceland taxidermy retro tumeric viral. Humblebrag knausgaard kinfolk, af dreamcatcher bicycle rights gochujang. Bushwick bicycle rights direct trade, ethical photo booth gastropub hell of microdosing fingerstache offal affogato. Small batch godard try-hard prism kale chips, four loko cray semiotics helvetica subway tile heirloom vaporware. Venmo VHS keytar succulents chambray.
+Contact: 
 
-> Brunch hella poutine authentic farm-to-table. Stumptown craft beer lomo, heirloom single-origin coffee synth PBR&B post-ironic. <cite>- Lorem Ipsum</cite>
+* aaaddress1@chroot.org
+* aaaddress1@tdohacker.org
+* aaaddress1@gmail.com
+* Twitter ([@aaaddress1](https://twitter.com/aaaddress1))
+* Facebook ([馬聖豪, Sheng-Hao Ma](https://www.facebook.com/aaaddress1))
+* Linkedin ([Sheng-Hao Ma](https://www.linkedin.com/in/aaaddress1/))
+* Github ([aaaddress1, Sheng-Hao Ma](https://github.com/aaaddress1))
 
-Banh mi hoodie viral, jianbing 3 wolf moon meditation tbh pok pok everyday carry lumbersexual kombucha iPhone. Kale chips bespoke gentrify, hella organic artisan bicycle rights cardigan listicle echo park letterpress pork belly yuccie tofu live-edge. Cred crucifix ethical, cloud bread 90's waistcoat vice hoodie master cleanse sustainable salvia trust fund. Ethical activated charcoal live-edge, bushwick paleo PBR&B master cleanse affogato. Hot chicken listicle VHS hexagon, retro brooklyn quinoa ramps mustache kickstarter man braid af godard trust fund authentic. Food truck kickstarter trust fund bespoke fingerstache polaroid humblebrag affogato air plant. Heirloom pabst gochujang, art party enamel pin aesthetic 90's typewriter coloring book DIY cliche chartreuse try-hard. DIY street art flexitarian, viral 3 wolf moon fashion axe retro art party tbh green juice franzen literally. Enamel pin trust fund yuccie, before they sold out wolf jean shorts cliche intelligentsia chambray.
+--
+
+Outlines:
+
+1. CHROOT、TDOHacker 資安社群成員
+2. ITRI Intern (Industrial Technology Research Institute, 工業技術研究院)
+3. DEFCON 26: [Playing Malware Injection with Exploit thoughts](https://www.defcon.org/html/defcon-26/dc-26-speakers.html#Ma), [Slide](https://speakerdeck.com/aaaddress1/playing-malware-injection-with-exploit-thoughts)
+4. Black Hat 2018 Speaker: [PUZZCODE, MAKE BACKDOORS GREAT AGAIN!](https://www.blackhat.com/asia-18/arsenal/schedule/index.html#puzzcode-make-backdoors-great-again-9680)
+5. VXCON 2018 Speaker: [Implementing Software Packer](https://speakerdeck.com/aaaddress1/implementing-software-packer-at-vxcon)
+6. HITCON CMT 2015 Speaker: [Android AIDS:Automatic Intelligence De-advertisement Scheme In CSharproid](http://hitcon.org/2015/CMT/agenda/)
+7. HITCON CMT 2015 Speaker: [欺騙IDA Pro Hex Rays插件！讓逆向分析者看見完全不同的結果 IDA Pro Hex-Rays Decompiler Cheat](http://hitcon.org/2015/CMT/agenda/)
+8. HITCON CMT 2016 Lightning Talk: [PokemonGo Hacking without Jailbreak](https://docs.google.com/presentation/d/1XqU2GPG6l5nF8rsGTGbddQXk8k--5ZCDP7HlPC2D2eQ/edit#slide=id.g15edae6bef_0_16)
+9. HITCON CMT 2017 Speaker: [Windows Injection 101: from Zero to ROP](http://hitcon.org/2017/CMT/agenda)
+10. HITCON CMT 2018 Speaker: [Malware Sandbox Emulation in Python](https://speakerdeck.com/aaaddress1/malware-sandbox-emulation-in-python)
+12. HoneyCon 2018: [加密與保護：揭秘程式保護殼如何防止駭客破解你的產品](http://2018.twcsa.org/speakers.html#spkr_0712_hc01_04)
+13. SITCON 2016 Speaker: [防毒擋不住？勒索病毒猖獗與實作](http://sitcon.org/2016/#target-schedule)
+14. SITCON 2017 Speaker: [開發學校雲端服務的奇技淫巧](https://sitcon.org/2017/#schedule-page)
+15. iThome#Chatbot Day 2017 Speaker: [孫子廣播電台](http://chatbot.ithome.com.tw/)
+16. BSidesLV 2016 Standby Speaker
+17. ICNC'17 IEEE Workshop 論文: [Advertisement Removal of Android Applications by Reverse Engineering](http://www.conf-icnc.org/2017/program.htm)
+18. TDOH Conf 2016 議程組長
+19. TDOH Conf 2017 活動組長
+
+--
+
+Training:
+
+1. HITCON Training 2018: [from Zero to Windows Shellcode Expert](https://hitcon.org/2018/CMT/training)
+2. 資安實務攻防研習營 ([Pwn](https://speakerdeck.com/aaaddress1/ntustxtdoh-pwnji-chu), [Reversing](https://speakerdeck.com/aaaddress1/ntustxtdoh-zi-xun-an-quan-ji-chu-gong-zuo-fang-ji-chu-ni-xiang-jiao-yu-xun-lian))
+3. 教育部資訊安全基礎技術工作坊 ([Pwn](https://speakerdeck.com/aaaddress1/linux-pwn-101), [Reversing](https://speakerdeck.com/aaaddress1/binary-ninja-101-windows-binary-reversing-from-zero-to-master))
