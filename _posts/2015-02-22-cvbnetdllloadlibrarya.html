@@ -1,0 +1,15 @@
+---
+layout: post
+title: "[C++]DLL遠程注入(LoadLibraryA)"
+date: '2015-02-22T03:21:00.002-08:00'
+author: 聖豪馬
+tags:
+- CBuilder
+- Injector
+- CPlus
+modified_time: '2015-06-01T04:43:40.382-07:00'
+blogger_id: tag:blogger.com,1999:blog-1335849442109808564.post-789087002632828971
+blogger_orig_url: http://helloadr.blogspot.com/2015/02/cvbnetdllloadlibrarya.html
+---
+
+國中寫的東西現在翻一翻<br />然後整理一下XD<br />丟上來Blog當廢文發XD<br /><div><br /></div><a href="http://helloadr.blogspot.tw/2015/02/vbnetdll-remote-inject-loadlibrarya.html">[VB.NET]DLL跨進程遠程注入(LoadLibraryA)</a><br /><div><div><div><br /></div><div>C++ Source Code在GitHub：</div><div>https://github.com/aaaddress1/Dll-Injector-In-CB<br /><br /></div><div><br /></div><div><pre class="brush: cpp;" name="code"><br />bool EnablePrivilege()<br />{<br />//提權模組<br />//這個其實你用不用都沒差(在Win7以上)<br />//不過這個模組如果不用,在XP之下會沒辦法正常寫入記憶體/跨進程存取<br /><br />HANDLE hToken=NULL;<br />//用OpenProcessToken確認自己的進程等級(非NULL則有權限)<br />if (OpenProcessToken(GetCurrentProcess(),TOKEN_ADJUST_PRIVILEGES,&hToken)) return true;<br />LPCTSTR szPrivName = SE_DEBUG_NAME;//調整到DEBUG<br />BOOL fEnable = true;<br />TOKEN_PRIVILEGES   tp;<br />tp.PrivilegeCount = 1;<br />LookupPrivilegeValue(NULL,szPrivName,&tp.Privileges[0].Luid);<br />tp.Privileges[0].Attributes   =   fEnable   ?   SE_PRIVILEGE_ENABLED:0;<br />AdjustTokenPrivileges(hToken,FALSE,&tp,sizeof(tp),NULL,NULL);<br />return((GetLastError()   ==   ERROR_SUCCESS));<br />}<br /><br />bool RemoteInject(String DLLPath,DWORD process_id)<br />{<br />EnablePrivilege();//提權<br />//接著用OpenProcess取得遠端進程控制句柄<br />void* ProcessHandle = OpenProcess(PROCESS_ALL_ACCESS,false,process_id);<br />if(!ProcessHandle) return false;<br />//接著把String轉Char Array<br />char *lpszDll=AnsiString(DLLPath).c_str() ;<br /><br />DWORD dwSize, dwWritten;<br />dwSize = lstrlenA( lpszDll ) + 1;<br />//在遠端進程開闢一個免費(?)空間<br />LPVOID lpBuf = VirtualAllocEx( ProcessHandle, NULL, dwSize, MEM_COMMIT, PAGE_READWRITE );<br />if (!lpBuf) return false;<br />//把Char Arry放進去剛剛開闢的空間<br />WriteProcessMemory( ProcessHandle, lpBuf, (LPVOID)lpszDll, dwSize, &dwWritten );<br />//取得對應的LoadLibraryA的位置<br />PTHREAD_START_ROUTINE pfnStartAddr = (PTHREAD_START_ROUTINE)GetProcAddress(GetModuleHandle(TEXT("Kernel32")), "LoadLibraryA");<br />//在對方Process開一個線程去跑LoadlibraryA去載入指定DLL<br />HANDLE hThread=CreateRemoteThread( ProcessHandle, NULL, 0, pfnStartAddr, lpBuf, 0, NULL);<br />if(!hThread) return false;<br />//等待該線程跑完<br />WaitForSingleObject( hThread, INFINITE );<br />//釋放掉我們剛剛占用的額外空間<br />VirtualFreeEx( ProcessHandle, lpBuf, dwSize, MEM_DECOMMIT );<br />CloseHandle( hThread );<br />return true;<br />}<br /></pre></div><div><pre><br /></pre></div></div><div><br /></div></div>

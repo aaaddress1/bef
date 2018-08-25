@@ -1,0 +1,16 @@
+---
+layout: post
+title: "[VB.NET]DLL跨進程遠程注入(LoadLibraryA)"
+date: '2015-02-22T02:58:00.001-08:00'
+author: 聖豪馬
+tags:
+- CBuilder
+- Injector
+- VB.NET
+- CPlus
+modified_time: '2015-06-01T04:43:40.388-07:00'
+blogger_id: tag:blogger.com,1999:blog-1335849442109808564.post-806995129068585186
+blogger_orig_url: http://helloadr.blogspot.com/2015/02/vbnetdll-remote-inject-loadlibrarya.html
+---
+
+這份Code在我高二的時候好像就丟在某論壇惹吧<br />不過既然現在有Blog就一併更新發上來了<br /><br /><a href="http://helloadr.blogspot.tw/2015/02/cvbnetdllloadlibrarya.html">[C++]DLL遠程注入(LoadLibraryA)</a><br /><br />Source Code在GitHub：<br />https://github.com/aaaddress1/DLL-Injector-In-VB.NET<br /><br />核心Code： <br /> <pre class="brush: vbnet"><br />Dim DllPath As String = Application.StartupPath + "/MyDll.dll"<br />'先宣告變數來存放你要注入的DLL<br />Dim TargetHandle As IntPtr = Process.GetProcessesByName("ProcessName")(0).Handle<br />'然後透過Process類別去取得Handle<br />'特別注意一下這個Handle取到了就同等於用OpenProcess得到控制句柄了喔<br /><br />If (TargetHandle.Equals(IntPtr.Zero)) Then<br />    MsgBox("對進程 " + ComboBox1.Text + " 進行打開進程行為失敗.")<br />    Exit Sub<br />End If<br /><br />'獲取LoadLibraryA的地址(PS:不同進程但同API,地址相同).<br />Dim GetAdrOfLLBA As IntPtr = GetProcAddress(GetModuleHandle("Kernel32"), "LoadLibraryA")<br />If (GetAdrOfLLBA.Equals(IntPtr.Zero)) Then<br />    MsgBox("取得LoadLibraryA API函數基址失敗.")<br />    Exit Sub<br />End If<br />'將DLL路徑轉為Char()陣列.<br />Dim OperaChar As Byte() = System.Text.Encoding.Default.GetBytes(DllPath)<br />'在目標進程申請一塊空間存放路徑字串.<br />Dim DllMemPathAdr = VirtualAllocEx(TargetHandle, 0&, &H64, MEM_COMMIT, PAGE_EXECUTE_READWRITE)<br />If (DllMemPathAdr.Equals(IntPtr.Zero)) Then<br />    MsgBox("對進程 " + ComboBox1.Text + "申請空間時發生錯誤.")<br />    Exit Sub<br />End If<br />'將申請來的記憶體空間寫入路徑Char()陣列.<br />If (WriteProcessMemory(TargetHandle, DllMemPathAdr, OperaChar, OperaChar.Length, 0) = False) Then<br />    MsgBox("對進程 " + ComboBox1.Text + "寫入記憶體時發生錯誤!")<br />    Exit Sub<br />End If<br />'令目標進程呼叫LoadLibraryA加載Char()陣列中存放的路徑.<br />CreateRemoteThread(TargetHandle, 0, 0, GetAdrOfLLBA, DllMemPathAdr, 0, 0)<br />MsgBox("對進程 " + ComboBox1.Text + "注入完成")<br /><br /></pre>

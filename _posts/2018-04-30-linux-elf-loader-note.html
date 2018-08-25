@@ -1,0 +1,14 @@
+---
+layout: post
+title: Linux ELF Loader Note
+date: '2018-04-30T11:11:00.003-07:00'
+author: 聖豪馬
+tags:
+- Linux
+- ELF
+modified_time: '2018-04-30T11:14:37.052-07:00'
+blogger_id: tag:blogger.com,1999:blog-1335849442109808564.post-6543163871243118298
+blogger_orig_url: http://helloadr.blogspot.com/2018/04/linux-elf-loader-note.html
+---
+
+之前玩 ELF 一直不懂為啥 _start 走進去後居然是去呼叫：<br />__libc_start_main(main, __libc_csu_init, __libc_csu_fini)<br /><br />然後莫名其妙的就走進去 main function 了；有別於 Windows PE _start 進去後就是初始化 CRT 接著呼叫 exit(main(argc, argv, envp))。<br /><br /><div class="text_exposed_show">看完 [1], [2] 之後大概就可以知道：<br /><br />1. __libc_start_main 在於 Process 中程式文件被 Mapping  到正確記憶體分配後，負責處理一些初始化的作業，比方說有用到第三方函數庫或全域變數初始化等等都會負責呼叫 __libc_csu_init  來協助完成這些初始化作業（實際初始化方式也僅是透過 ELF 自帶的 .init section 程式碼呼叫、其他第三方函數庫家載後 .init  也得呼叫）<br /><br />2. __libc_start_main 完成初始化後透過 .plt 來呼叫系統函數來取得 argc, argv, envp 作為參數傳遞給開發者的 main 函數<br /><br />3. 等待開發者 main 函數返回後，在跳至 .fini section 的程式碼做一些後續關閉 Process 必要的清理作業（比方說記憶體回收之類的）<br /><br />感覺上大概就是把 Windows 編譯器產出的 CRTStartup 這件事情封裝在 glibc 內分成三塊來處理XD<br /><br />[1]: <a data-ft="{&quot;tn&quot;:&quot;-U&quot;}" data-lynx-mode="async" data-lynx-uri="https://l.facebook.com/l.php?u=https%3A%2F%2Fblog.csdn.net%2Fgary_ygl%2Farticle%2Fdetails%2F8506007&amp;h=ATPJHjqp2NoFOUZNY2TN-MBlkPwzG5Z4hM2jIJMX2qdx_ucTR-99QjZpKz7RV9lzW3vHM2qF6mEL07GIYrXg_u2osEn1DQjL7Rus62Wtl5_KsZbn-nsWrq2IMkZkQut5N9wPI80_f4sZvEcPA3wlnyXtgnY" href="https://blog.csdn.net/gary_ygl/article/details/8506007" rel="nofollow" target="_blank">https://blog.csdn.net/gary_ygl/article/details/8506007</a><br />[2]: <a data-ft="{&quot;tn&quot;:&quot;-U&quot;}" data-lynx-mode="async" data-lynx-uri="https://l.facebook.com/l.php?u=https%3A%2F%2Fstackoverflow.com%2Fquestions%2F16970281%2Fwhats-going-on-in-libc-start-main&amp;h=ATNltoVHdBnCOfRjjg9vuneYSA5exibzptsq8RyAxn_yxefIPcf_oNy_eIxR2sxYpscWmMkswFv0yB4ypH975tgCyaTYGoulOjC0w2OEEh0_Uy5EE5pHHEMr_D_CpuKgZlxNZtprz27_RaK6I7Ui8-GM84k" href="https://stackoverflow.com/questions/16970281/whats-going-on-in-libc-start-main" rel="nofollow" target="_blank">https://stackoverflow.com/…/whats-going-on-in-libc-start-ma…</a><br />[3]: https://felixzhang00.github.io/2016/12/24/2016-12-24-ELF%E6%96%87%E4%BB%B6%E8%A3%85%E8%BD%BD%E9%93%BE%E6%8E%A5%E8%BF%87%E7%A8%8B%E5%8F%8Ahook%E5%8E%9F%E7%90%86/ </div>
