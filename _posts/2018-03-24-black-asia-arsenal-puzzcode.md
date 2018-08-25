@@ -1,14 +1,11 @@
-\-\-- layout: post title: \"\[Black Asia Arsenal\] puzzCode:
-專注開發後門的編譯器, 自帶反逆向、對抗病毒特徵碼定位技術\" date:
-\'2018-03-24T09:32:00.000-07:00\' author: 聖豪馬 tags: - Compiler - C++
-- Arsenal - BlackHat - ASM modified\_time:
-\'2018-04-03T00:45:24.319-07:00\' thumbnail:
-https://3.bp.blogspot.com/-dcsFEGI5Hug/WrZ3DKMQX7I/AAAAAAAAIpU/Q3kQo1MRZO4qbDs0jyy-p1EyYphLZ2UgACLcBGAs/s72-c/%25E8%259E%25A2%25E5%25B9%2595%25E5%25BF%25AB%25E7%2585%25A7%2B2018-03-25%2B%25E4%25B8%258A%25E5%258D%258812.04.07.png
-blogger\_id:
-tag:blogger.com,1999:blog-1335849442109808564.post-2045761407484611997
-blogger\_orig\_url:
-http://helloadr.blogspot.com/2018/03/black-asia-arsenal-puzzcode.html
-\-\--
+---
+layout: post
+title: "[Black Asia Arsenal] puzzCode: 專注開發後門的編譯器, 自帶反逆向、對抗病毒特徵碼定位技術"
+img: https://3.bp.blogspot.com/-dcsFEGI5Hug/WrZ3DKMQX7I/AAAAAAAAIpU/Q3kQo1MRZO4qbDs0jyy-p1EyYphLZ2UgACLcBGAs/s72-c/%25E8%259E%25A2%25E5%25B9%2595%25E5%25BF%25AB%25E7%2585%25A7%2B2018-03-25%2B%25E4%25B8%258A%25E5%258D%258812.04.07.png
+date: 2018-04-03T00:45:24.319-07:00
+description: 
+tag: [Compiler, C++, Arsenal, BlackHat, ASM]
+---
 
 前言
 ----
