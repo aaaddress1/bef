@@ -1,6 +1,11 @@
-# [qira] ImportError: No module named ext.socketio
-
-
+---
+layout: post
+title: "[qira] ImportError: No module named ext.socketio"
+img: 2018-10-25-qira-import-error.markdown/F6F35335-D63C-4600-813F-DE84636AEE56.png # Add image post (optional)
+date: 2018-10-25 12:55:00 +0300
+description: 
+tag: []
+---
 
 ![](2018-10-25-qira-import-error.markdown/F6F35335-D63C-4600-813F-DE84636AEE56.png)
 
