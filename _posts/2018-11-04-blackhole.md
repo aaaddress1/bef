@@ -40,8 +40,7 @@ unsigned int hook_func(
   const struct net_device *out, 
   int (*okfn)(struct sk_buff *)) {
 
-  ip_header = (struct iphdr *)skb_network_header(skb); //grab network header using accessor
-
+  ip_header = (struct iphdr *)skb_network_header(skb);
   if (ip_header->protocol == /* TCP */ 6) {
     tcp_header = tcp_hdr(skb);
     u32 saddr, daddr;
@@ -100,20 +99,18 @@ remove:
 
 ## Reference
 
-[Roll Your Own Firewall with Netfilter | Linux Journal](https://www.linuxjournal.com/article/7184)
-
-[Netfilter Hook 程式範例](http://neokentblog.blogspot.com/2014/06/netfilter-hook.html)
-
-[两个netfilter的例子 - 小猪爱拱地 - CSDN博客](https://blog.csdn.net/CaspianSea/article/details/43730021)
+* [Roll Your Own Firewall with Netfilter](https://www.linuxjournal.com/article/7184)
+* [Netfilter Hook 程式範例](http://neokentblog.blogspot.com/2014/06/netfilter-hook.html)
+* [两个netfilter的例子 - 小猪爱拱地 - CSDN博客](https://blog.csdn.net/CaspianSea/article/details/43730021)
 
 
 ## Detail about Netfilter
 
-[Linux netfilter源码分析(4)](http://staff.ustc.edu.cn/~james/linux/netfilter-4.html)
+* [Linux netfilter源码分析(4)](http://staff.ustc.edu.cn/~james/linux/netfilter-4.html)
 
 ## Grab TCP Header
 
-[C - Linux - kernel module - TCP header - Stack Overflow](https://stackoverflow.com/questions/16528868/c-linux-kernel-module-tcp-header)
+* [C - Linux - kernel module - TCP header - Stack Overflow](https://stackoverflow.com/questions/16528868/c-linux-kernel-module-tcp-header)
 
 ## ‘NF_IP_LOCAL_OUT’ undeclared
 
@@ -122,4 +119,4 @@ remove:
 
 ## Error compiling kernel module linux/module.h: No such file or directory found
 
-[c - Error compiling kernel module linux/module.h: No such file or directory found - Stack Overflow](https://stackoverflow.com/questions/30021405/error-compiling-kernel-module-linux-module-h-no-such-file-or-directory-found)
+* [c - Error compiling kernel module linux/module.h: No such file or directory found - Stack Overflow](https://stackoverflow.com/questions/30021405/error-compiling-kernel-module-linux-module-h-no-such-file-or-directory-found)
