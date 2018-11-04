@@ -19,6 +19,7 @@ img {
 ## Source 
 
 ```
+ // blackhole (telescope) for port 3000, by aaaddress1@chroot.org 
  #include <linux/kernel.h>
  #include <linux/module.h>
  #include <linux/netfilter.h>
@@ -32,7 +33,13 @@ static struct nf_hook_ops nfho; //net filter hook option struct
 struct tcphdr *tcp_header; //udp header struct (not used)
 struct iphdr *ip_header; //ip header struct
 
-unsigned int hook_func(const struct nf_hook_ops *ops, struct sk_buff *skb, const struct net_device *in, const struct net_device *out, int (*okfn)(struct sk_buff *)) {
+unsigned int hook_func(
+  const struct nf_hook_ops *ops, 
+  struct sk_buff *skb, 
+  const struct net_device *in, 
+  const struct net_device *out, 
+  int (*okfn)(struct sk_buff *)) {
+
   ip_header = (struct iphdr *)skb_network_header(skb); //grab network header using accessor
 
   if (ip_header->protocol == /* TCP */ 6) {
@@ -64,9 +71,11 @@ int init_module() {
 void cleanup_module() {
   nf_unregister_hook(&nfho);
 }
+
 ```
 
 ## Makefile
+
 ```
 MOD := hookModule
 obj-m += $(MOD).o
@@ -89,21 +98,28 @@ remove:
 
 ![](/assets/img/2018-11-04-blackhole/A12B118B-14C5-49B7-8D59-0C6DDD87E021.png)
 
+## Reference
 
 [Roll Your Own Firewall with Netfilter | Linux Journal](https://www.linuxjournal.com/article/7184)
+
 [Netfilter Hook 程式範例](http://neokentblog.blogspot.com/2014/06/netfilter-hook.html)
+
 [两个netfilter的例子 - 小猪爱拱地 - CSDN博客](https://blog.csdn.net/CaspianSea/article/details/43730021)
 
 
 ## Detail about Netfilter
+
 [Linux netfilter源码分析(4)](http://staff.ustc.edu.cn/~james/linux/netfilter-4.html)
 
 ## Grab TCP Header
+
 [C - Linux - kernel module - TCP header - Stack Overflow](https://stackoverflow.com/questions/16528868/c-linux-kernel-module-tcp-header)
 
 ## ‘NF_IP_LOCAL_OUT’ undeclared
+
 * [SOLVED "NF_IP_PRE_ROUTING" macro not found](https://www.linuxquestions.org/questions/linux-networking-3/nf_ip_pre_routing-macro-not-found-4175431483/)
 * [基于Netfilter hook功能的数据包拦截---有关DCN优化的碎碎念 -  - ITeye博客](http://iam42.iteye.com/blog/1661816)
 
 ## Error compiling kernel module linux/module.h: No such file or directory found
+
 [c - Error compiling kernel module linux/module.h: No such file or directory found - Stack Overflow](https://stackoverflow.com/questions/30021405/error-compiling-kernel-module-linux-module-h-no-such-file-or-directory-found)
