@@ -1,8 +1,8 @@
 logo: "adr's note." # add logo name
-title: "adr's note: windows, reversing, exploit"
+title: "adr's note: reversing, exploit"
 description: > # this means to ignore newlines until "baseurl:"
-  aaaddress1's blog. 
-  
+  aaaddress1's blog.
+
 permalink: ':title/'
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://30cm.tw" # the base hostname & protocol for your site, e.g. http://example.com
@@ -16,15 +16,15 @@ banner-desc: It seems like aaaddress1 leaves some notes here ┐(´∀｀)┌ # 
 author-pic: face.jpg # your photo
 author-name: Sheng-Hao Ma # your name
 about-author: > # about author
-  Sheng-Hao Ma (aaaddress1, adr) is a core member of CHROOT Security Group and TDOHacker security community in Taiwan. 
-  He has over 10-year experience in reverse engineering, machine language, and Intel 8086. 
-  He experts in Windows vulnerability, Exploit, and Reverse Engineering. 
-  
-  Moreover, Sheng-Hao Ma was also a speaker at Black Hat, DEFCON USA, VXCON, HITCON (Hackers In Taiwan Conference), 
+  Sheng-Hao Ma (aaaddress1, adr) is a core member of CHROOT Security Group and TDOHacker security community in Taiwan.
+  He has over 10-year experience in reverse engineering, machine language, and Intel 8086.
+  He experts in Windows vulnerability, Exploit, and Reverse Engineering.
+
+  Moreover, Sheng-Hao Ma was also a speaker at Black Hat, DEFCON USA, beVX, VXCON, HITCON (Hackers In Taiwan Conference),
   SITCON (Students In Taiwan Conference) and iThome#Chatbot.
- 
+
 email: aaaddress1@chroot.org # your email
-phone: (496)-169-6557 # your pnone number
+phone: # your pnone number
 website: https://30cm.tw # you website
 
 # Social link
